@@ -1,7 +1,43 @@
-total
-tax
-discount
-net total
-cash
-balance
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+name
+categery
+sub categary
+bought price
+selling price
+barcode Number
+
+        <List>
+          {["All mail", "Trash", "Spam"].map((text, index) => (
+            <ListItem key={text} disablePadding sx={{ display: "block" }}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? "initial" : "center",
+                  px: 2.5
+                }}
+                onClick={handleClick}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center"
+                  }}
+                >
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                {open && (drop ? <ExpandLess /> : <ExpandMore />)}
+              </ListItemButton>
+              <Collapse in={!drop} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItemButton sx={{ pl: 4 }}>
+                    <ListItemIcon>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <ListItemText primary="Starred" />
+                  </ListItemButton>
+                </List>
+              </Collapse>
+            </ListItem>
+          ))}
+        </List>
