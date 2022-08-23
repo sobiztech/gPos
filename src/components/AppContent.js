@@ -1,4 +1,3 @@
-import { Box } from "@mui/material";
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import routes from "../Routes";
@@ -23,8 +22,6 @@ function AppContent() {
         })}
          <Route path="/" element={<Navigate to="/employee" replace />} />
 
-         {/* <Route path="/role" element={< Role/>} />
-         <Route path="/employee" element={< Employee/>} /> */}
       </Routes>
   );
 }

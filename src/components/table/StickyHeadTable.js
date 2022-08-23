@@ -16,9 +16,8 @@ import HeaderAdd from "./HeaderAdd";
 
 
 export default function StickyHeadTable(props) {
-const columns = props.employeeheader;
-const rows = props.rows;
-console.log("hi");
+const columns = props.tableHeader;
+const rows = props.tableRows;
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -39,7 +38,7 @@ console.log("hi");
       <Card>
         <CardContent>
           <Paper sx={{ width: "100%", overflow: "hidden" }}>
-            <HeaderAdd />
+            <HeaderAdd name={props.cardHeaderLable} btn={props.cardHeaderButton} to={props.to}/>
             <TableContainer sx={{ maxHeight: 460 }}>
               <Table stickyHeader aria-label="sticky table">
                 <TableHead>

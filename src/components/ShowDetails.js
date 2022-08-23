@@ -1,30 +1,24 @@
+import React from "react";
 import {
   Accordion,
   AccordionSummary,
-  Button,
   Card,
-  CardActions,
   CardContent,
-  CardHeader,
   Typography
 } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
-
-function ShowRole() {
+import HeaderAdd from "./table/HeaderAdd";
+function ShowDetails(props) {
   return (
     <div style={{ padding: "20px" }}>
       <Card sx={{ maxWidth: "100%" }}>
-        <CardHeader title="Role/Add Role" />
-        <CardActions sx={{ p: 2 }}>
-          <Button variant="contained">BACK</Button>
-        </CardActions>
+        <HeaderAdd
+          btn={props.headerButton ? props.headerButton : "nothing"}
+          name={props.headerName ? props.headerName : "nothing"}
+          to={props.to ? props.to : "/employee"}
+        />
         <CardContent>
           <Accordion>
-            <AccordionSummary
-              aria-controls="panel1bh-content"
-              id="panel1bh-header"
-            >
+            <AccordionSummary>
               <Typography sx={{ width: "20%", flexShrink: 0 }}>
                 Role ID
               </Typography>
@@ -48,4 +42,4 @@ function ShowRole() {
   );
 }
 
-export default ShowRole;
+export default ShowDetails;

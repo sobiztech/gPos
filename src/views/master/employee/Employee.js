@@ -1,13 +1,16 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
 import StickyHeadTable from "../../../components/table/StickyHeadTable";
 import { EmployeeHeader, rows } from "../../../data/Data";
 function Employee() {
   return (
     <>
-      
-            <StickyHeadTable employeeheader={EmployeeHeader} rows={rows} />
-        
+      <StickyHeadTable
+        tableHeader={EmployeeHeader}
+        tableRows={rows}
+        cardHeaderButton="ADD EMPLOYEE"
+        cardHeaderLable="EMPLOYEE"
+        to="/employee/add-Employee"
+      />
     </>
   );
 }

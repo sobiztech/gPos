@@ -4,7 +4,7 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function HeaderAdd() {
+function HeaderAdd(props) {
   const Div = styled.div`
     height: 50px;
     width: 100%;
@@ -20,10 +20,16 @@ function HeaderAdd() {
   };
   return (
     <Div>
-      <div style={{ margin: "0 20px" }}>Employee/Name</div>
-      <Link to="/employee/add-Employee">
-        <Button variant="contained" style={mystyle} endIcon={<AddBoxIcon />}>
-          Add EMPLOYEE
+      <div style={{ margin: "0 20px" }}>
+        {props.name ? props.name : "NOTHING"}
+      </div>
+      <Link to={props.to ? props.to : "/employee/add-Employee"}>
+        <Button
+          variant="contained"
+          style={mystyle}
+          endIcon={props.headerIcon ? props.headerIcon : <AddBoxIcon />}
+        >
+          {props.btn ? props.btn : "BUTTON"}
         </Button>
       </Link>
     </Div>

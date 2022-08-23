@@ -7,18 +7,16 @@ import {
   CardContent,
   CardHeader,
   FormControlLabel,
-  MenuItem,
   Switch,
   TextField
 } from "@mui/material";
+import HeaderAdd from "../../../components/table/HeaderAdd";
 
 function AddRole() {
   return (
     <div style={{ padding: "20px" }}>
       <Card sx={{ maxWidth: "100%" }}>
-        <CardHeader
-          title="Role/Add Role"
-        />
+      <HeaderAdd btn="CANCEL" name="ADD ROLE" to="/role"/>
         <CardContent>
           <Box
             component="form"
@@ -67,7 +65,7 @@ function AddRole() {
                       control={<Switch color="primary" />}
                       label="Admip"
                       labelPlacement="end"
-                    />{" "}
+                    />
                     <FormControlLabel
                       value="end"
                       control={<Switch color="primary" />}
@@ -79,7 +77,7 @@ function AddRole() {
                       control={<Switch color="primary" />}
                       label="AdmisdfnDevelop"
                       labelPlacement="end"
-                    />{" "}
+                    />
                     <FormControlLabel
                       value="end"
                       control={<Switch color="primary" />}
